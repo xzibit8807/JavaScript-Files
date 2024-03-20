@@ -1,0 +1,11 @@
+
+{{#each latestStones}}
+  <div>
+        <img src="{{imageUrl}}">
+        <p>Name: {{name}}</p>
+        <p>Category: {{Category}}</p>
+        <a class="details-btn" href="/{{_id}}/details">Details</a>
+    </div>
+{{else}}
+    <p class="no-post">There are no gems and minerals!</p>
+{{/each}}

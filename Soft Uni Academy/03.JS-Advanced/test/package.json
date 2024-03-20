@@ -1,0 +1,22 @@
+{
+  "name": "fundamentals",
+  "version": "1.0.0",
+  "main": "test",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/chai": "^4.3.9",
+    "@types/mocha": "^10.0.3",
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "ts-node": "^10.9.1",
+    "typings": "^2.1.1"
+  }
+}
+
+

@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../../assets/pictures/backgrounds/img3wp.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 110vh; /* Set height to fill the viewport */
+    position: relative; /* Add position relative to allow z-index to work */
+}
+
+.main-content {
+    position: relative;
+    z-index: 2; /* Ensure main content is above the background */
+    color: rgb(114, 36, 118); /* Example text color */
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    padding: 100px;
+    border-radius: 200px;          
+    height: 120px;
+    width: 120px;
+    font-size: 20px;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 2s; /* Delay the animation by 3 seconds */
+}
+
+.main-c2 {
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 3s; /* Delay the animation by 3 seconds */
+    z-index: 2; /* Ensure main content is above the background */
+    color: rgb(79, 10, 10); /* Red text color */
+    font-weight: bold; /* Make the text thicker */
+    font-size: 50px; /* Increase text size */
+    font-family: 'Arial Black', sans-serif; /* Example of a different font style */
+    padding: 120px;
+    border-radius: 200px;
+    height: 120px;
+    width: 120px;
+    margin-left: 430px;
+    margin-top: -150px;
+}
+
+
+
+.overlay-content {
+    position: relative;
+    z-index: 3; /* Ensure overlay content is above the background */
+    color: rgb(48, 24, 60); /* Example text color */
+}
+
+.hide {
+    opacity: 0;
+    animation: fadeIn 3s ease forwards;
+    animation-delay: 5s; /* Delay the animation by 3 seconds */
+    position: relative;
+    z-index: 4; /* Ensure the hiding content is above everything else */
+    color: rgb(140, 128, 201); /* Example text color */
+    height: 440px;
+    width: 1040px;
+    padding: 10px;
+    font-size: 50px;
+    margin-left: 330px;
+    margin-top: 270px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

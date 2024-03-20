@@ -1,0 +1,26 @@
+        <section id="create-container">
+            <div class="create-container-info">
+                <h1>Create Course</h1>
+                <form  method="POST" class="createForm">
+                    <label>Title:</label>
+                    <input type="text" id="title" name="title" value="{{title}}" >
+
+                    <label>Type:</label>
+                    <input type="text" id="type" name="type" value="{{type}}">
+
+                    <label>Certificate:</label>
+                    <input type="text" id="certificate" name="certificate" value="{{certificate}}" >
+
+                    <label>Image:</label>
+                    <input type="text" id="imageUrl" name="imageUrl" value="{{imageUrl}}"  placeholder="http://...">
+
+                    <label>Description:</label>
+                    <textarea id="description" name="description" value="{{description}}" ></textarea>
+
+                    <label>Price:</label>
+                    <input name="price" type="number" id="price" value="{{price}}">
+
+                    <input type="submit" id="btn" value="Create">
+                </form>
+            </div>
+        </section>

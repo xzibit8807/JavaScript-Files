@@ -10,23 +10,23 @@ body {
 
 .main-content {
     position: relative;
-    z-index: 2; /* Ensure main content is above the background */
-    color: rgb(114, 36, 118); /* Example text color */
-    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 2; 
+    color: rgb(147, 14, 100); 
+    background-color: rgba(25, 95, 46, 0.5); 
     padding: 100px;
     border-radius: 200px;          
     height: 120px;
     width: 120px;
     font-size: 20px;
     animation: fadeIn 2s ease forwards;
-    animation-delay: 2s; /* Delay the animation by 3 seconds */
+    animation-delay: 0s;
 }
 
 .main-c2 {
     position: relative;
     opacity: 0;
-    animation: fadeIn 2s ease forwards;
-    animation-delay: 3s; /* Delay the animation by 3 seconds */
+    animation: blurIn 2s ease forwards;
+    animation-delay: 2,5s; /* Delay the animation by 3 seconds */
     z-index: 2; /* Ensure main content is above the background */
     color: rgb(79, 10, 10); /* Red text color */
     font-weight: bold; /* Make the text thicker */
@@ -45,16 +45,16 @@ body {
 .overlay-content {
     position: relative;
     z-index: 3; /* Ensure overlay content is above the background */
-    color: rgb(48, 24, 60); /* Example text color */
+    color: rgb(24, 60, 24); /* Example text color */
 }
 
 .hide {
     opacity: 0;
     animation: fadeIn 3s ease forwards;
-    animation-delay: 5s; /* Delay the animation by 3 seconds */
+    animation-delay: 4s; /* Delay the animation by 3 seconds */
     position: relative;
     z-index: 4; /* Ensure the hiding content is above everything else */
-    color: rgb(140, 128, 201); /* Example text color */
+    color: rgb(145, 15, 123); /* Example text color */
     height: 440px;
     width: 1040px;
     padding: 10px;
@@ -70,4 +70,25 @@ body {
     to {
         opacity: 1;
     }
+}
+
+
+@keyframes blurIn {
+    0% {
+        opacity: 0;
+        filter: blur(10px); /* Start with a blurred effect */
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0); /* Gradually remove blur effect */
+    }
+}
+
+
+.center{
+    color: rgb(105, 11, 14) ;
+    width: 100px;
+    height: 100px;
+    background: rgba(55, 27, 125, 0.46);
+
 }

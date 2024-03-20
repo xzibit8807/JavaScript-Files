@@ -198,13 +198,16 @@ section {
 
 }
 
-.logo1{
-    float:inherit;
-    width: 244px;
-    height: 130px;
-    margin-right: 10px;
-    margin-left: 0px;
-    margin-bottom: 0px;
-    margin-top: 20px;
-    
+
+#additional-logo {
+  float:inherit;
+  width: 244px;
+  height: 130px;
+  margin-right: 10px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  margin-top: 20px;
+
 }
+
+

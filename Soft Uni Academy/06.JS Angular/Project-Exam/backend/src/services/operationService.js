@@ -45,7 +45,7 @@ exports.liked = async (stoneId, userId) =>{
  const user = await User.findById(userId);
 
  stone.likedList.push(userId);
- user.likedStones.push(stoneId);
+ user.likedGames.push(stoneId);
 
  await stone.save();
  await user.save();
@@ -85,7 +85,7 @@ exports.create = async(userId, stoneData) => {
   });
 
 
-  await User.findByIdAndUpdate(userId, {$push: {createdStoneCatalogs: createStone._id}});
+  await User.findByIdAndUpdate(userId, {$push: {AddedGamesCatalog: createStone._id}});
 
   return createStone;
 }

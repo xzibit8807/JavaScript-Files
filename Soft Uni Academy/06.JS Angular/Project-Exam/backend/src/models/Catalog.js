@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const StoneSchema = new mongoose.Schema({
+const GameSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, `Name is required.`],
@@ -12,10 +12,11 @@ const StoneSchema = new mongoose.Schema({
         lowercase: true,
         minLength: [3, `Min length of Category is 3 Characters.`],
     },
-    color: {
-        type: String,
-        required: [true, `Color is required.`],
-        minLength: [2, `Min length of Color is 2 Characters.`],
+    rating: {
+        type: Number,
+        required: [true, `Rating is required.`],
+        minLength: [1, `Number should be between 1 and 5`],
+        maxLength: [1, `Number should be between 1 and 5`],
   
     },
     imageUrl: {
@@ -24,25 +25,11 @@ const StoneSchema = new mongoose.Schema({
         match: /^https?:\/\//
     },
 
-    location: {
-        type: String,
-        required: [true, `Location is required.`],
-        minLength: [5, `Min length of Location is 5 Characters.`],
-        maxLength: [15, `Max length of Location is 15 Characters.`],
-    },
-
-    formula:{
-        type: String,
-        required: [true, `Formula is required.`],
-        minLength: [3, `Min length of Formula is 3 Characters.`],
-        maxLength: [30, `Max length of Formula is 30 Characters.`],
-    },
-
     description:{
         type: String,
         required: [true, `Description is required.`],
         minLength: [10, `Min length of Description is 10 Characters.`],
-        maxLength: 1000, 
+        maxLength: [1000, `Maximum length of Description is 1000 Characters.`], 
     },
 
     likedList: [{
@@ -61,13 +48,13 @@ const StoneSchema = new mongoose.Schema({
 
 
 
-StoneSchema.pre(`save`, function(){
+GameSchema.pre(`save`, function(){
     if(!this.createdAt){
         this.createdAt = Date.now();
     }
 })
 
 
-const Catalog = mongoose.model(`Catalog`, StoneSchema);
+const Catalog = mongoose.model(`Catalog`, GameSchema);
 
 module.exports = Catalog;

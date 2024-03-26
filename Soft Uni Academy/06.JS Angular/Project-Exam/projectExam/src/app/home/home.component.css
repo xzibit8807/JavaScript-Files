@@ -10,34 +10,49 @@ body {
 
 .main-content {
     position: relative;
-    z-index: 2; 
-    color: rgb(147, 14, 100); 
+    z-index: 1; 
+    color: rgb(136, 198, 88); 
     background-color: rgba(25, 95, 46, 0.5); 
-    padding: 100px;
-    border-radius: 200px;          
-    height: 120px;
-    width: 120px;
+    padding: 80px;
+    border-radius: 80px;          
+    height:150px;
+    width: 140px;
     font-size: 20px;
     animation: fadeIn 2s ease forwards;
     animation-delay: 0s;
 }
+.msg{
+    color: blueviolet;
+    font-size: 24px;
+    background-color: rgb(55, 162, 136);
+    font-style: italic;
+    padding: 10px;
+}
+.msg:hover { 
+    opacity: 2;
+    filter: blur(0);
+    color: aqua;
+    background: rgba(24, 148, 80, 0.46);
+    text-align: center;
+    font-size: 30px;
+}
 
 .main-c2 {
     position: relative;
-    opacity: 0;
+    opacity: 2;
     animation: blurIn 2s ease forwards;
-    animation-delay: 2,5s; /* Delay the animation by 3 seconds */
+    animation-delay: 2,5s; 
     z-index: 2; /* Ensure main content is above the background */
-    color: rgb(79, 10, 10); /* Red text color */
+    color: rgb(22, 10, 79);
     font-weight: bold; /* Make the text thicker */
     font-size: 50px; /* Increase text size */
-    font-family: 'Arial Black', sans-serif; /* Example of a different font style */
-    padding: 120px;
-    border-radius: 200px;
-    height: 120px;
+    font-family: 'Arial Black'; /* Example of a different font style */
+    padding: 5px;
+    border-radius: 80px;
+    height: 222px;
     width: 120px;
-    margin-left: 430px;
-    margin-top: -150px;
+    margin-left: 530px;
+    margin-top: 5px;
 }
 
 
@@ -85,10 +100,24 @@ body {
 }
 
 
-.center{
-    color: rgb(105, 11, 14) ;
+.btn{
+    color: rgb(26, 141, 34) ;
     width: 100px;
     height: 100px;
     background: rgba(55, 27, 125, 0.46);
+    padding:0.75rem 1.5rem;   
+}
 
+
+.main-c2 span{
+    position:relative;
+    z-index: 1;
+    color:rgb(25, 113, 181);
+    transition:  all 0.1s ease-in-out;
+}
+.btn:hover {
+    opacity: 5;
+    filter: blur(0);
+    color: aqua;
+    background: rgba(24, 148, 80, 0.46);
 }

@@ -193,8 +193,8 @@ button {
   
     a:hover.nav-link:not(.active) {
       color: #444;
-      background: #ddd;
-      background: linear-gradient(45deg, #fff, #ddd);
+      background: #0baa2d;
+      background: linear-gradient(45deg, #f857a8, #ff5858);
     }
   }
   @keyframes logo-hover {

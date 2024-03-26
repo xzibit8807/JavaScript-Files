@@ -18,11 +18,11 @@ const userSchema = new mongoose.Schema({
         required: [true,`Password is required.`],
         minlength: [4, `Min length of the Password is 4 characters.`]
     },
-    createdStoneCatalogs: [{
+    AddedGamesCatalog: [{
         type: mongoose.Types.ObjectId,
         ref: `Catalog`
     }],
-    likedStones: [{
+    likedGames: [{
         type: mongoose.Types.ObjectId,
         ref: `Catalog`
     }]

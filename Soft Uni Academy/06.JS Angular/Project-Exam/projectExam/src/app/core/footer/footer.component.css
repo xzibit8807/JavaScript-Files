@@ -100,10 +100,12 @@ section {
 
 .footer-distributed .footer-center p{
   display: inline-block;
-  color: #ffffff;
+  color: #12dd41;
   font-weight:400;
   vertical-align: middle;
-  margin:0;
+  margin:20;
+  font-style: oblique;
+  font-display: smooth;
 }
 
 .footer-distributed .footer-center p span{

@@ -10,7 +10,7 @@ import { EMAIL_DOMAINS } from 'src/app/constants';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  // @ViewChild('loginForm') loginForm: NgForm | undefined;
+  // @ViewChild('loginForm') form: NgForm | undefined;
   domains = EMAIL_DOMAINS;
   constructor(private userService: UserService, private router: Router) {}
 

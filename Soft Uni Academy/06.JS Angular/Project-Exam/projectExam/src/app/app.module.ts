@@ -13,6 +13,7 @@ import { HeaderComponent } from './core/header/header.component';
 import { appInterceptorProvider } from './app.interceptor';
 import { ErrorComponent } from './core/error/error.component';
 import { UserModule } from './user/user.module';
+import { MaxCountDirective } from './max-count.directive';
 // import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
@@ -22,6 +23,7 @@ import { UserModule } from './user/user.module';
     FooterComponent,
     HeaderComponent,
     ErrorComponent,
+    MaxCountDirective,
     // AuthenticateComponent,
   ],
   imports: [

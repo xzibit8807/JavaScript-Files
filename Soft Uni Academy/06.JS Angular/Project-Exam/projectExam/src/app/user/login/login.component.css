@@ -42,7 +42,7 @@ h2 {
   padding: 20px;
 }
 
-#formContent {
+#form-group {
   -webkit-border-radius: 10px 10px 10px 10px;
   border-radius: 10px 10px 10px 10px;
   background: #fff;
@@ -264,4 +264,10 @@ input[type=text]:placeholder {
 
 * {
   box-sizing: border-box;
+}
+
+.error{
+  color:red;
+  text-align: center;
+  font-weight: bold;
 }

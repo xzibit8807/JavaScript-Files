@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,7 +13,8 @@ import { HeaderComponent } from './core/header/header.component';
 import { appInterceptorProvider } from './app.interceptor';
 import { ErrorComponent } from './core/error/error.component';
 import { UserModule } from './user/user.module';
-import { MaxCountDirective } from './max-count.directive';
+import { MaxCountDirective } from './shared/validators/max-count.directive';
+
 // import { AuthenticateComponent } from './authenticate/authenticate.component';
 
 @NgModule({
@@ -33,6 +34,7 @@ import { MaxCountDirective } from './max-count.directive';
     HttpClientModule,
      AppRoutingModule,
      FormsModule,
+     ReactiveFormsModule,
      UserModule,
   ],
   providers: [appInterceptorProvider],

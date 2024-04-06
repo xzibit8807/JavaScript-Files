@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
@@ -11,31 +11,25 @@ import { EMAIL_DOMAINS } from 'src/app/constants';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  loginFormData: any = {};
 
-  
   domains = EMAIL_DOMAINS;
-  // Render Static Content
-  // ngOnInit():void {
-  //   this.domains = EMAIL_DOMAINS;
-  // }
-
-  // Render the final content
-  // ngAfterViewInit():void {}
 
   constructor(private userService: UserService, private router: Router) {}
 
   login(form: NgForm) {
- 
-    if (form.invalid) {  
-      console.log(`Form validation failed`);    
+    if (form.invalid) {
+      // Example of showing visual feedback to the user
+      Object.keys(form.controls).forEach(controlName => {
+        form.controls[controlName].markAsTouched(); // Mark all controls as touched to trigger validation messages
+      });
       return;
     }
-    
 
     const { email, password } = form.value;
 
     this.userService.login(email, password).subscribe(() => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
     });
   }
 }

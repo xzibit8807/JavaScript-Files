@@ -1,8 +1,8 @@
 <div class="wrapper fadeInDown">
   <div id="form-group">
     <!-- Tabs Titles -->
-    <h2 class="active" RouterLink="/auth/login"> Sign In </h2>
-    <h2 class="inactive underlineHover" RouterLink="/auth/register">Sign Up </h2>
+    <h2 class="active"><a routerLink="/auth/login"> LOGIN </a></h2>
+    <h2 class="inactive underlineHover"><a routerLink="/auth/register">REGISTER </a></h2>
 
     <!-- Icon -->
     <div class="fadeIn first">
@@ -11,25 +11,31 @@
 
     <!-- Login Form -->
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login" ngModel required email
-        #emailInput="ngModel">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" ngModel required #passwordInput="ngModel">
+
+      <input type="text" id="email" class="fadeIn second" name="email" placeholder="email" [ngModel]="loginFormData.email" required email
+      #emailInput="ngModel" appEmail="['bg']">
+      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" (ngModel)="loginFormData.password" required #passwordInput="ngModel">
+    
+      <div *ngIf="emailInput.touched && emailInput.invalid">
+        <div *ngIf="emailInput.errors?.['required']" class="error">Email is required !</div>
+        <div *ngIf="emailInput.errors?.['email']" class="error">Email is invalid !</div>
+        <div *ngIf="emailInput.errors?.['pattern']" class="error">Email is invalid !</div>
+        <div *ngIf="emailInput.errors?.['minlength']" class="error">Email is invalid !</div>
+        <div *ngIf="emailInput.errors?.['maxlength']" class="error">Email is invalid !</div>
+      </div>
+      <div *ngIf="passwordInput.touched && passwordInput.invalid">
+        <div *ngIf="passwordInput.errors?.['required']" class="error"> Password is required !</div>
+      </div>
+
       <input type="submit" class="fadeIn fourth" value="Log In">
+      
+      <div class="btn">To <a class="btn2" routerLink="/auth/register">Register</a> Page</div>
+      
+
     </form>
-    
-    <div *ngIf="passwordInput.touched">
-      <div *ngIf="passwordInput.errors?.['required']"> Password is required !</div>
-    </div>
-    <div *ngIf="emailInput.touched">
-      <div *ngIf="emailInput.errors?.['required']" class="error">Email is required !</div>
-      <div *ngIf="emailInput.errors?.['email']" class="error">Email is invalid !</div>
-      <div *ngIf="emailInput.errors?.['pattern']" class="error">Email is invalid !</div>
-      <div *ngIf="emailInput.errors?.['minlength']" class="error">Email is invalid !</div>
-      <div *ngIf="emailInput.errors?.['maxlength']" class="error">Email is invalid !</div>
-    </div>
-    
-    
-    <!-- Remind Password, not yet done still in progress -->
+      
+      
+      <!-- Remind Password, not yet done still in progress -->
     <!-- <div id="formFooter">
         <a class="underlineHover" href="#">Forgot Password?</a>
       </div> -->

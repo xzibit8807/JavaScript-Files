@@ -172,7 +172,11 @@ input[type=text]:placeholder {
     transform: none;
   }
 }
-
+.fadeIn(
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+)
 @keyframes fadeInDown {
   0% {
     opacity: 0;
@@ -262,4 +266,10 @@ input[type=text]:placeholder {
 
 * {
   box-sizing: border-box;
+}
+
+.error{
+  color:red;
+  text-align: center;
+  font-weight: bold;
 }

@@ -1,27 +1,49 @@
-<p>register works!</p>
 <div class="wrapper fadeInDown">
-    <div id="formContent">
-      <!-- Tabs Titles -->
-      <h2 class="active" RouterLink="/auth/login"> Sign In </h2>
-      <h2 class="inactive underlineHover" routerLink="/auth/register">Sign Up </h2>
-  
-      <!-- Icon -->
-      <div class="fadeIn first">
-        <img src="../../../assets/pictures/logos/login.jpg" id="icon" alt="User Icon" />
-      </div>
-  
-      <!-- Login Form -->
-      <form>
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-        <input type="text" id="rePassword" class="fadeIn third" name="rePassword" placeholder="Repeat Password">
-        <input type="submit" class="fadeIn fourth" value="Register">
-      </form>
-  
-      <!-- Remind Passowrd, not yet done still in progress -->
-      <!-- <div id="formFooter">
-        <a class="underlineHover" href="#">Forgot Password?</a>
-      </div> -->
-  
+  <div id="formContent">
+    <!-- Tabs Titles -->
+    <h2 class="active"><a routerLink="/auth/login">LOGIN</a></h2>
+    <h2 class="inactive underlineHover"><a routerLink="/auth/register">REGISTER</a></h2>
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img src="../../../assets/pictures/logos/login.jpg" id="icon" alt="User Icon" />
     </div>
+
+    <!-- Register Form -->
+    <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+      <ng-container formGroupName="passGroup">
+        <div class="form-group">
+          <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email" formControlName="email">
+          <input type="password" id="password" class="fadeIn.third" name="password" placeholder="Password" formControlName="password">
+          <input type="password" id="confirmPassword" class="fadeIn.third" name="confirmPassword" placeholder="Repeat Password" formControlName="confirmPassword">
+        </div>
+        
+        <!-- Display email validation errors -->
+        <div *ngIf="registerForm.get('passGroup.email')?.touched">
+          <div *ngIf="registerForm.get('passGroup.email')?.errors?.['required']" class="error">
+            Email is required!
+          </div>
+          <div *ngIf="registerForm.get('passGroup.email')?.errors?.['email']" class="error">
+            Invalid email format!
+          </div>
+        </div>
+        
+        <!-- Display password confirmation error -->
+        <div *ngIf="registerForm.get('passGroup.confirmPassword')?.touched">
+          <p class="error" *ngIf="registerForm.hasError('matchPassword', 'passGroup')">
+            Password and confirmPassword do not match!
+          </p>
+        </div>
+        <input type="submit" class="fadeIn fourth" value="Register">
+      </ng-container>
+    </form>
+
+    
+
+    <!-- Remind Passowrd, not yet done still in progress -->
+    <!-- <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div> -->
+    
   </div>
+</div>

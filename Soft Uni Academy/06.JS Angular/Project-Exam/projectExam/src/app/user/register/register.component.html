@@ -11,39 +11,53 @@
 
     <!-- Register Form -->
     <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
-      <ng-container formGroupName="passGroup">
-        <div class="form-group">
-          <input type="text" id="email" class="fadeIn second" name="email" placeholder="Email" formControlName="email">
-          <input type="password" id="password" class="fadeIn.third" name="password" placeholder="Password" formControlName="password">
-          <input type="password" id="confirmPassword" class="fadeIn.third" name="confirmPassword" placeholder="Repeat Password" formControlName="confirmPassword">
+      <div formGroupName="passGroup" class="pass">
+        <div class="pass">
+          <input type="text" id="email" class="pass" name="email" placeholder="Email" formControlName="email">
+          <input type="password" id="password" class="pass" name="password" placeholder="Password"
+            formControlName="password">
+          <input type="password" id="confirmPassword" class="pass" name="confirmPassword"
+            placeholder="Repeat Password" formControlName="confirmPassword">
         </div>
-        
-        <!-- Display email validation errors -->
-        <div *ngIf="registerForm.get('passGroup.email')?.touched">
-          <div *ngIf="registerForm.get('passGroup.email')?.errors?.['required']" class="error">
+
+
+
+        <ng-container *ngIf="registerForm.get('username')?.touched">
+          <p class="error" *ngIf="registerForm.get('username')?.errors?.['required']">
+            Username is required!
+          </p>
+
+          <p class="error" *ngIf="registerForm.get('username')?.errors?.['minlength']">
+            Username must be at least 5 characters!
+          </p>
+        </ng-container>
+
+        <ng-container *ngIf="registerForm.get('email')?.touched">
+          <p class="error" *ngIf="registerForm.get('email')?.errors?.['required']">
             Email is required!
-          </div>
-          <div *ngIf="registerForm.get('passGroup.email')?.errors?.['email']" class="error">
-            Invalid email format!
-          </div>
+          </p>
+          <p class="error" *ngIf="registerForm.get('email')?.errors?.['emailValidator']">
+            Email is not valid!
+          </p>
+        </ng-container>
+
+        <div *ngIf="registerForm.touched && registerForm.invalid">
+          <div *ngIf="registerForm.errors?.['required']" class="error">Email is required !</div>
+          <div *ngIf="registerForm.errors?.['email']" class="error">Email is invalid !</div>
+          <div *ngIf="registerForm.errors?.['pattern']" class="error">Email is invalid !</div>
+          <div *ngIf="registerForm.errors?.['minlength']" class="error">Email is invalid !</div>
+          <div *ngIf="registerForm.errors?.['maxlength']" class="error">Email is invalid !</div>
         </div>
-        
+
         <!-- Display password confirmation error -->
-        <div *ngIf="registerForm.get('passGroup.confirmPassword')?.touched">
-          <p class="error" *ngIf="registerForm.hasError('matchPassword', 'passGroup')">
+        <div *ngIf="passwordMismatch">
+          <p class="error">
             Password and confirmPassword do not match!
           </p>
         </div>
-        <input type="submit" class="fadeIn fourth" value="Register">
-      </ng-container>
+
+        <input type="Submit" class="fadeIn fourth" value="Register">
+      </div>
     </form>
-
-    
-
-    <!-- Remind Passowrd, not yet done still in progress -->
-    <!-- <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
-    </div> -->
-    
   </div>
 </div>

@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
+  private apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
@@ -36,7 +37,8 @@ export class RegisterService {
   constructor(private http: HttpClient) {}
 
   register(email: string, password: string): Observable<any> {
+    const userData = {email, password}
     const { apiUrl } = environment;
-    return this.http.post(apiUrl, { email, password });
+    return this.http.post(apiUrl, { userData });
   }
 }

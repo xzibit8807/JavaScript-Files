@@ -13,24 +13,22 @@
     <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
       <div formGroupName="passGroup" class="pass">
         <div class="pass">
-          <input type="text" id="email" class="pass" name="email" placeholder="Email" formControlName="email">
-          <input type="password" id="password" class="pass" name="password" placeholder="Password"
-            formControlName="password">
-          <input type="password" id="confirmPassword" class="pass" name="confirmPassword"
-            placeholder="Repeat Password" formControlName="confirmPassword">
+          <p><label for="email"><span><i class="pass"></i></span></label>
+            <input type="email" form="email" id="email" class="pass" name="email" placeholder="Email"
+              formControlName="email" [ngModel]="registerForm" required email #emailInput>
+          </p>
+          <p><label for="password"><span><i class="pass"></i></span></label>
+            <input type="password" form="password" id="password" class="pass" name="password" placeholder="Password"
+              formControlName="password">
+          </p>
+
+            <p><label for="password"><span><i class="pass"></i></span></label>
+              <input type="password" form="confirmPassword" id="confirmPassword" class="pass" name="confirmPassword"
+              placeholder="Repeat Password" formControlName="confirmPassword" (ngModel)="registerForm" required
+              #passwordInput>
+            </p>
         </div>
 
-
-
-        <ng-container *ngIf="registerForm.get('username')?.touched">
-          <p class="error" *ngIf="registerForm.get('username')?.errors?.['required']">
-            Username is required!
-          </p>
-
-          <p class="error" *ngIf="registerForm.get('username')?.errors?.['minlength']">
-            Username must be at least 5 characters!
-          </p>
-        </ng-container>
 
         <ng-container *ngIf="registerForm.get('email')?.touched">
           <p class="error" *ngIf="registerForm.get('email')?.errors?.['required']">
@@ -56,7 +54,22 @@
           </p>
         </div>
 
-        <input type="Submit" class="fadeIn fourth" value="Register">
+
+        <!-- <ng-container *ngIf="passGroup?.get('rePassword')?.touched">
+          <p
+            class="error"
+            *ngIf="passGroup?.errors?.['matchPasswordsValidator'] || 
+            passGroup?.get('rePassword')?.errors?.['required']"
+          >
+           The Repeat Password does not match password!
+          </p>
+        </ng-container> -->
+
+        <input (click)="registerSubmit()" type="Submit" class="fadeIn fourth" value="Register">
+
+      </div>
+      <div>
+        <button type="button" (click)="registerSubmit()">Register Here</button>
       </div>
     </form>
   </div>

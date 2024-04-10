@@ -5,13 +5,13 @@
         <h3>Company<span>logo</span> </h3> <img class="additional-logo" src="../../assets/pictures/logos/gameLogo1.png">"
 
         <p class="footer-links">
-          <a href="#" class="link-1">Home</a>
+          <a href="/home" class="link-1">Home</a>
           
-          <a href="#">Blog</a>
+          <a href="/catalog">Catalog</a>
         
-          <a href="#">About</a>
+          <a href="/about">About</a>
           
-          <a href="#">Contact</a>
+          <a href="/contact">Contact</a>
         </p>
 
         <p class="footer-company-name">Company Name: Game-Port© </p>
@@ -44,7 +44,7 @@
           <a href="#"><i class="fa fa-twitter"></i></a>
           <a href="#"><i class="fa fa-linkedin"></i></a>
           <a href="#"><i class="fa fa-github"></i></a>
-
+          <div class="clock"> Date: {{time$ | async | date}} Time: {{ time$ | async | date : 'hh:mm:ss'}}</div>
         </div>
 
       </div>

@@ -13,7 +13,7 @@
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
 
       <input type="text" id="email" class="fadeIn second" name="email" placeholder="email" [ngModel]="loginFormData.email" required email
-      #emailInput="ngModel" appEmail="['bg']">
+      #emailInput="ngModel" appEmail="">
       <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" (ngModel)="loginFormData.password" required #passwordInput="ngModel">
     
       <div *ngIf="emailInput.touched && emailInput.invalid">

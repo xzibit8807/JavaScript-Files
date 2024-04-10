@@ -28,13 +28,14 @@ export class UserService implements OnDestroy {
 
   login(email: string, password: string) {
     return this.http
-      .post<UserForAuth>(this.apiUrl +'/login', { email, password })
+      .post<UserForAuth>(this.apiUrl +'/auth/login', { email, password })
       .pipe(tap((user) => this.user$$.next(user)));
   }
 
   register(email: string, password: string, confirmPassword: string): Observable<any> {
+    
     const userData = { email, password, confirmPassword };
-    return this.http.post<UserForAuth>(this.apiUrl, {userData})
+    return this.http.post<UserForAuth>('/auth/register', {userData})
      .pipe(tap((user) => this.user$$.next(user)));
   }
 

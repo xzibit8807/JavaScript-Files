@@ -211,5 +211,9 @@ section {
   margin-top: 20px;
 
 }
-
+.clock {
+  height: 200px;
+  margin: 0 auto;
+  color:aqua
+}
 

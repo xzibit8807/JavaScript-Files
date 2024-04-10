@@ -17,7 +17,12 @@ export class RegisterComponent {
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]]
     }, { validators: matchPassword('password', 'confirmPassword') })
+    
   });
+
+  get passGroup() {
+    return this.registerForm.get('passGroup');
+  }
 
   constructor(
     private fb: FormBuilder,
@@ -26,6 +31,9 @@ export class RegisterComponent {
   ) {}
 
   registerSubmit(): void {
+    debugger;
+    console.log(this.registerForm.value);
+    
     if (this.registerForm.invalid) {
       return;
     }
@@ -35,7 +43,7 @@ export class RegisterComponent {
     if (email && password && confirmPassword) {
       console.log(email, password);
       
-      this.userService.register(email, password, confirmPassword).subscribe({
+      this.userService.register(email!, password!, confirmPassword!).subscribe({
         next: () => {
           this.router.navigate(['/']);
         },

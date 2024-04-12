@@ -1,3 +1,8 @@
+#Description
+
+Page is build for a Game Catalog and it has Register, Login, Catalog, Search ,Profile ,and dinamic Home Page. For the Backend is used MongoDB.
+Page can be easely edited and used for any kind of catalog.
+
 # ProjectExam
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.

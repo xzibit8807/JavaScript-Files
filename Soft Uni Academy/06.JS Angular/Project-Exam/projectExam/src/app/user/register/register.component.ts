@@ -12,7 +12,7 @@ import { matchPassword } from 'src/app/shared/validators/match-password';
 export class RegisterComponent {
   registerForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required]],
+    // password: ['', [Validators.required]],
     passGroup: this.fb.group({
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]]
@@ -38,8 +38,8 @@ export class RegisterComponent {
       return;
     }
   
-    const { email, passGroup: { password, confirmPassword } } = this.registerForm.value as { email: string, passGroup: { password: string, confirmPassword: string } };
-  
+    const { email, passGroup: { password, confirmPassword } = {} } = this.registerForm.value /*as { email: string, passGroup: { password: string, confirmPassword: string } };
+  */
     if (email && password && confirmPassword) {
       console.log(email, password);
       

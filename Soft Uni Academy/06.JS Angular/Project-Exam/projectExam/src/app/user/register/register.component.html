@@ -14,63 +14,58 @@
       <div formGroupName="passGroup" class="pass">
         <div class="pass">
           <p><label for="email"><span><i class="pass"></i></span></label>
-            <input type="email" form="email" id="email" class="pass" name="email" placeholder="Email"
-              formControlName="email" [ngModel]="registerForm" required email #emailInput>
+            <input type="email" id="email" class="pass" name="email" placeholder="Email"
+              formControlName="email" required email #emailInput>
           </p>
           <p><label for="password"><span><i class="pass"></i></span></label>
-            <input type="password" form="password" id="password" class="pass" name="password" placeholder="Password"
+            <input type="password" id="password" class="pass" name="password" placeholder="Password"
               formControlName="password">
           </p>
-
-            <p><label for="password"><span><i class="pass"></i></span></label>
-              <input type="password" form="confirmPassword" id="confirmPassword" class="pass" name="confirmPassword"
-              placeholder="Repeat Password" formControlName="confirmPassword" (ngModel)="registerForm" required
-              #passwordInput>
-            </p>
+          <p><label for="confirmPassword"><span><i class="pass"></i></span></label>
+            <input type="password" id="confirmPassword" class="pass" name="confirmPassword"
+              placeholder="Repeat Password" formControlName="confirmPassword" required #passwordInput>
+          </p>
         </div>
-
-
-        <ng-container *ngIf="registerForm.get('email')?.touched">
-          <p class="error" *ngIf="registerForm.get('email')?.errors?.['required']">
+    
+        <!-- Error messages for email -->
+        <ng-container *ngIf="emailInvalid">
+          <p class="error" *ngIf="emailRequired">
             Email is required!
           </p>
-          <p class="error" *ngIf="registerForm.get('email')?.errors?.['emailValidator']">
+          <p class="error" *ngIf="emailInvalidFormat">
             Email is not valid!
           </p>
         </ng-container>
-
-        <div *ngIf="registerForm.touched && registerForm.invalid">
-          <div *ngIf="registerForm.errors?.['required']" class="error">Email is required !</div>
-          <div *ngIf="registerForm.errors?.['email']" class="error">Email is invalid !</div>
-          <div *ngIf="registerForm.errors?.['pattern']" class="error">Email is invalid !</div>
-          <div *ngIf="registerForm.errors?.['minlength']" class="error">Email is invalid !</div>
-          <div *ngIf="registerForm.errors?.['maxlength']" class="error">Email is invalid !</div>
-        </div>
-
+    
+        <!-- Error messages for password -->
+        <ng-container *ngIf="registerForm.get('passGroup.password')?.touched">
+          <p class="error" *ngIf="registerForm.get('passGroup.password')?.errors?.['required']">
+            Password is required!
+          </p>
+        </ng-container>
+    
+        <!-- Error messages for confirmPassword -->
+        <ng-container *ngIf="registerForm.get('passGroup.confirmPassword')?.touched">
+          <p class="error" *ngIf="registerForm.get('passGroup.confirmPassword')?.errors?.['required']">
+            Confirm Password is required!
+          </p>
+        </ng-container>
+    
         <!-- Display password confirmation error -->
         <div *ngIf="passwordMismatch">
           <p class="error">
             Password and confirmPassword do not match!
           </p>
         </div>
-
-
-        <!-- <ng-container *ngIf="passGroup?.get('rePassword')?.touched">
-          <p
-            class="error"
-            *ngIf="passGroup?.errors?.['matchPasswordsValidator'] || 
-            passGroup?.get('rePassword')?.errors?.['required']"
-          >
-           The Repeat Password does not match password!
-          </p>
-        </ng-container> -->
-
-        <input (click)="registerSubmit()" type="Submit" class="fadeIn fourth" value="Register">
-
+    
+        <input type="submit" class="fadeIn fourth" value="Register">
       </div>
       <div>
-        <button type="button" (click)="registerSubmit()">Register Here</button>
+        <a class="active">For new Users please<button type="button" class="bttn" routerLink="/auth/login">Register Here</button>.</a>
       </div>
     </form>
+    
+    
+    
   </div>
 </div>

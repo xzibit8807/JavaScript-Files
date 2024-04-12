@@ -7,10 +7,15 @@ const searchPage = require(`./controllers/searchController`);
 const noPageController = require(`./controllers/404Controller`);
 
 
+router.post('/register', authController.register);
+router.post('/login', authController.login);
+router.post('/logout', authController.logout);
+
+
 router.use(homeController);
 router.use(catalogController);
 router.use(searchPage);
-router.use(authController);
+// router.use(authController);
 
 router.use(noPageController);
 

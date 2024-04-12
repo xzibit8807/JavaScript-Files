@@ -289,3 +289,18 @@ input[type=text]:placeholder {
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
 }
+
+.bttn{
+  color: #4694bb;
+  background-color: rgb(220, 231, 229);
+  font-size: 20px;
+}
+
+.bttn:hover { 
+  opacity: 2;
+  filter: blur(0);
+  color: rgb(77, 29, 124);
+  background: rgba(10, 255, 120, 0.46);
+  text-align: center;
+  font-size: 24px;
+}

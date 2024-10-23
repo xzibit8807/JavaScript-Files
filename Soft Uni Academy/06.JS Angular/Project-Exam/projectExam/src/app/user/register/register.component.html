@@ -10,62 +10,62 @@
     </div>
 
     <!-- Register Form -->
-    <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+    <form [formGroup]="registerForm" (ngSubmit)="registerSubmit()" class="pass">
+      <p><label for="email"><span></span></label>
+        <input type="email" id="email" class="pass" name="email" placeholder="@Email@" required
+          formControlName="email" required email #emailInput>
+      </p>
+      <p><label for="name"><span></span></label>
+        <input type="name" id="name" class="pass" name="name" placeholder="User Name" required
+          formControlName="name" required >
+      </p>
       <div formGroupName="passGroup" class="pass">
-        <div class="pass">
-          <p><label for="email"><span><i class="pass"></i></span></label>
-            <input type="email" id="email" class="pass" name="email" placeholder="Email"
-              formControlName="email" required email #emailInput>
-          </p>
-          <p><label for="password"><span><i class="pass"></i></span></label>
-            <input type="password" id="password" class="pass" name="password" placeholder="Password"
-              formControlName="password">
-          </p>
-          <p><label for="confirmPassword"><span><i class="pass"></i></span></label>
-            <input type="password" id="confirmPassword" class="pass" name="confirmPassword"
-              placeholder="Repeat Password" formControlName="confirmPassword" required #passwordInput>
-          </p>
-        </div>
-    
-        <!-- Error messages for email -->
-        <ng-container *ngIf="emailInvalid">
-          <p class="error" *ngIf="emailRequired">
-            Email is required!
-          </p>
-          <p class="error" *ngIf="emailInvalidFormat">
-            Email is not valid!
-          </p>
-        </ng-container>
-    
-        <!-- Error messages for password -->
-        <ng-container *ngIf="registerForm.get('passGroup.password')?.touched">
-          <p class="error" *ngIf="registerForm.get('passGroup.password')?.errors?.['required']">
-            Password is required!
-          </p>
-        </ng-container>
-    
-        <!-- Error messages for confirmPassword -->
-        <ng-container *ngIf="registerForm.get('passGroup.confirmPassword')?.touched">
-          <p class="error" *ngIf="registerForm.get('passGroup.confirmPassword')?.errors?.['required']">
-            Confirm Password is required!
-          </p>
-        </ng-container>
-    
-        <!-- Display password confirmation error -->
-        <div *ngIf="passwordMismatch">
-          <p class="error">
-            Password and confirmPassword do not match!
-          </p>
-        </div>
-    
-        <input type="submit" class="fadeIn fourth" value="Register">
+        <p><label for="password"></label>
+          <input type="password" id="password" class="pass" name="password" placeholder="Password"
+            formControlName="password">
+        </p>
+        <p><label for="confirmPassword"></label>
+          <input type="password" id="confirmPassword" class="pass" name="confirmPassword"
+            placeholder="Repeat Password" formControlName="confirmPassword" required #passwordInput>
+        </p>
       </div>
-      <div>
-        <a class="active">For new Users please<button type="button" class="bttn" routerLink="/auth/login">Register Here</button>.</a>
+
+      <!-- Error messages for email -->
+      <ng-container *ngIf="emailInvalid">
+        <p class="error" *ngIf="emailRequired">
+          Email is required!
+        </p>
+        <p class="error" *ngIf="emailInvalidFormat">
+          Email is not valid!
+        </p>
+      </ng-container>
+
+      <!-- Error messages for password -->
+      <ng-container *ngIf="registerForm.get('passGroup.password')?.touched">
+        <p class="error" *ngIf="registerForm.get('passGroup.password')?.errors?.['required']">
+          Password is required!
+        </p>
+      </ng-container>
+
+      <!-- Error messages for confirmPassword -->
+      <ng-container *ngIf="registerForm.get('passGroup.confirmPassword')?.touched">
+        <p class="error" *ngIf="registerForm.get('passGroup.confirmPassword')?.errors?.['required']">
+          Confirm Password is required!
+        </p>
+      </ng-container>
+
+      <!-- Display password confirmation error -->
+      <div *ngIf="passwordMismatch">
+        <p class="error">
+          Password and confirmPassword do not match!
+        </p>
       </div>
+
+      <input type="submit" class="fadeIn fourth" value="Register">
     </form>
-    
-    
-    
+
+    <div>
+      <a class="active">If you already have a Registration please go to<button type="button" class="bttn" routerLink="/auth/login">Login Page</button>.</a>
+    </div>
   </div>
 </div>

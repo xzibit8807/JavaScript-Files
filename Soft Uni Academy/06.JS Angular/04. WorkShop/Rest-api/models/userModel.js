@@ -5,37 +5,28 @@ const saltRounds = Number(process.env.SALTROUNDS) || 5;
 const { ObjectId } = mongoose.Schema.Types;
 
 const userSchema = new mongoose.Schema({
-    tel: {
-        type: String,
-    },
+
     email: {
         type: String,
-        required: true,
+        required: [true,`Email is required.`],
+        lowercase: true,
         unique: true,
-    },
-    username: {
-        type: String,
-        required: true,
-        unique: true,
-        minlength: [5, 'Username should be at least 5 characters'],
-        validate: {
-            validator: function (v) {
-                return /[a-zA-Z0-9]+/g.test(v);
-            },
-            message: props => `${props.value} must contains only latin letters and digits!`
-        },
+        minlength: 10,
+        regex: [/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, `Wrong Email ore it may already exist !`],
     },
     password: {
         type: String,
-        required: true,
-        minlength: [5, 'Password should be at least 5 characters'],
-        validate: {
-            validator: function (v) {
-                return /[a-zA-Z0-9]+/g.test(v);
-            },
-            message: props => `${props.value} must contains only latin letters and digits!`
-        },
+        required: [true,`Password is required.`],
+        minlength: [4, `Min length of the Password is 4 characters.`]
     },
+    AddedGamesCatalog: [{
+        type: mongoose.Types.ObjectId,
+        ref: `Catalog`
+    }],
+    likedGames: [{
+        type: mongoose.Types.ObjectId,
+        ref: `Catalog`
+    }],
     themes: [{
         type: ObjectId,
         ref: "Theme"

@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../../../assets/pictures/backgrounds/img3wp.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 110vh; /* Set height to fill the viewport */
+    position: relative; /* Add position relative to allow z-index to work */
+}
+
+.main-content {
+    position: relative;
+    z-index: 1; 
+    color: rgb(136, 198, 88); 
+    background-color: rgba(25, 95, 46, 0.5); 
+    padding: 80px;
+    border-radius: 80px;          
+    height:150px;
+    width: 140px;
+    font-size: 20px;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 0s;
+}
+.msg{
+    color: rgb(74, 22, 122);
+    font-size: 24px;
+    background-color: rgb(55, 162, 136);
+    font-style: italic;
+    padding: 10px;
+}
+.msg:hover { 
+    opacity: 2;
+    filter: blur(0);
+    color: aqua;
+    background: rgba(24, 148, 80, 0.46);
+    text-align: center;
+    font-size: 27px;
+}
+
+.main-c2 {
+    position: relative;
+    opacity: 2;
+    animation: blurIn 2s ease forwards;
+    animation-delay: 2,5s; 
+    z-index: 2; /* Ensure main content is above the background */
+    color: rgb(22, 10, 79);
+    font-weight: bold; /* Make the text thicker */
+    font-size: 50px; /* Increase text size */
+    font-family: 'Arial Black'; /* Example of a different font style */
+    padding: 5px;
+    border-radius: 80px;
+    height: 222px;
+    width: 120px;
+    margin-left: 530px;
+    margin-top: 5px;
+}
+
+
+
+.overlay-content {
+    position: relative;
+    z-index: 3; /* Ensure overlay content is above the background */
+    color: rgb(24, 60, 24); /* Example text color */
+}
+
+.hide {
+    opacity: 0;
+    animation: fadeIn 3s ease forwards;
+    animation-delay: 4s; /* Delay the animation by 3 seconds */
+    position: relative;
+    z-index: 4; /* Ensure the hiding content is above everything else */
+    color: rgb(145, 15, 123); /* Example text color */
+    height: 440px;
+    width: 1040px;
+    padding: 10px;
+    font-size: 50px;
+    margin-left: 330px;
+    margin-top: 270px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes blurIn {
+    0% {
+        opacity: 0;
+        filter: blur(10px); /* Start with a blurred effect */
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0); /* Gradually remove blur effect */
+    }
+}
+
+
+.btn{
+    color: rgb(26, 141, 34) ;
+    width: 100px;
+    height: 100px;
+    background: rgba(55, 27, 125, 0.46);
+    padding:0.75rem 1.5rem;   
+}
+
+
+.main-c2 span{
+    position:relative;
+    z-index: 1;
+    color:rgb(25, 113, 181);
+    transition:  all 0.1s ease-in-out;
+}
+.btn:hover {
+    opacity: 5;
+    filter: blur(0);
+    color: aqua;
+    background: rgba(24, 148, 80, 0.46);
+}

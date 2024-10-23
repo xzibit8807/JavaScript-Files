@@ -1,0 +1,46 @@
+<div class="add-game-container">
+    <h1>Add New Game</h1>
+    <form (ngSubmit)="onSubmit()" #gameForm="ngForm">
+      <div>
+        <label for="gameName">Game Name</label>
+        <input
+          type="text"
+          id="gameName"
+          required
+          [(ngModel)]="newGame.gameName"
+          name="gameName"
+        />
+      </div>
+      <div>
+        <label for="gameImage">Game Image URL</label>
+        <input
+          type="text"
+          id="gameImage"
+          required
+          [(ngModel)]="newGame.gameImage"
+          name="gameImage"
+        />
+      </div>
+      <div>
+        <label for="gameType">Game Type</label>
+        <input
+          type="text"
+          id="gameType"
+          required
+          [(ngModel)]="newGame.gameType"
+          name="gameType"
+        />
+      </div>
+      <div>
+        <label for="gameDescription">Game Description</label>
+        <textarea
+          id="gameDescription"
+          required
+          [(ngModel)]="newGame.gameDescription"
+          name="gameDescription"
+        ></textarea>
+      </div>
+      <button type="submit">Add Game</button>
+    </form>
+  </div>
+  

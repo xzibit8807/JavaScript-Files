@@ -12,7 +12,7 @@ import { matchPassword } from 'src/app/shared/validators/match-password';
 export class RegisterComponent {
   registerForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
-    // password: ['', [Validators.required]],
+    name: ['', [Validators.required]],
     passGroup: this.fb.group({
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]]
@@ -31,26 +31,29 @@ export class RegisterComponent {
   ) {}
 
   registerSubmit(): void {
-    debugger;
+    // debugger;
     console.log(this.registerForm.value);
     
     if (this.registerForm.invalid) {
       return;
     }
   
-    const { email, passGroup: { password, confirmPassword } = {} } = this.registerForm.value /*as { email: string, passGroup: { password: string, confirmPassword: string } };
+    const { email, name, passGroup: { password, confirmPassword } = {} } = this.registerForm.value /*as { email: string, passGroup: { password: string, confirmPassword: string } };
   */
-    if (email && password && confirmPassword) {
-      console.log(email, password);
+    if (email && name && password && confirmPassword) {
+      console.log(email, name, "has a password");
       
-      this.userService.register(email!, password!, confirmPassword!).subscribe({
-        next: () => {
-          this.router.navigate(['/']);
-        },
-        error: (error) => {
-          console.error('Registration failed:', error);
-        }
-      });
+      this.userService.register(email!, name!, password!, confirmPassword!).subscribe(()=>{
+        this.router.navigate(['/home']);
+      })
+      // this.userService.register(email!, password!, confirmPassword!).subscribe({
+      //   next: () => {
+      //     this.router.navigate(['/home']);
+      //   },
+      //   error: (error) => {
+      //     console.error('Registration failed:', error);
+      //   }
+      // });
     } else {
       console.error('Email, password, or confirmPassword is missing.');
     }

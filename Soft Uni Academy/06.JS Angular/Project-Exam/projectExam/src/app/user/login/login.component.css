@@ -115,7 +115,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   -ms-transform: scale(0.95);
   transform: scale(0.95);
 }
-
+/* 
 input[type=text] {
   background-color: #f6f6f6;
   border: none;
@@ -135,7 +135,7 @@ input[type=text] {
   transition: all 0.5s ease-in-out;
   -webkit-border-radius: 5px 5px 5px 5px;
   border-radius: 5px 5px 5px 5px;
-}
+} */
 
 input[type=text]:focus {
   background-color: #fff;
@@ -216,6 +216,10 @@ input[type=text]:placeholder {
   -webkit-animation-delay: 0.6s;
   -moz-animation-delay: 0.6s;
   animation-delay: 0.6s;
+  color:#6a39e7;
+  font-style: italic;
+  font-size: 20px;
+  border: 2px solid;
 }
 
 .fadeIn.third {
@@ -287,4 +291,23 @@ input[type=text]:placeholder {
   background-color: #abdecd;
   font-style: oblique;
   font-size: 24px;
+}
+
+.pass{
+  color:green;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  border: 2px solid #56baed;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
 }

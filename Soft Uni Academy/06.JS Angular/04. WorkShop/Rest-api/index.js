@@ -1,7 +1,8 @@
 global.__basedir = __dirname;
 require('dotenv').config()
 const dbConnector = require('./config/db');
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
+
 const apiRouter = require('./router');
 const cors = require('cors');
 // const config = require('./config/config');
@@ -19,6 +20,8 @@ dbConnector()
       credentials: true
     }));
 
+    console.log(`DataBase is up and running.\n => This is the way.`)
+
     app.use('/api', apiRouter);
 
     app.use(errorHandler);
@@ -26,3 +29,7 @@ dbConnector()
     app.listen(config.port, console.log(`Listening on port ${config.port}!`));
   })
   .catch(console.error);
+
+  
+mongoose.connection.on(`error`, (err) => console.log(err));
+mongoose.connection.on(`disconnected`, ()=> console.log(`DataBase is disconnected.`));

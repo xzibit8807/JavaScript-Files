@@ -1,11 +1,12 @@
 const router = require(`express`).Router();
 
 const homeController = require(`./controllers/homeController`);
-const authController = require(`./controllers/authController`);
+const { authController } = require(`./controllers/authController`);
 const catalogController = require(`./controllers/catalogController`);
 const searchPage = require(`./controllers/searchController`);
 const noPageController = require(`./controllers/404Controller`);
 
+// const { authController } = require('../controllers');
 
 router.post('/register', authController.register);
 router.post('/login', authController.login);

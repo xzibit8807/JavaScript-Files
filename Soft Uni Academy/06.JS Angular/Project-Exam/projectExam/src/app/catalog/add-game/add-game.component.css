@@ -1,0 +1,45 @@
+.add-game-container {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .add-game-container h1 {
+    text-align: center;
+  }
+  
+  .add-game-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .add-game-container form div {
+    margin-bottom: 15px;
+  }
+  
+  .add-game-container form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .add-game-container form input,
+  .add-game-container form textarea {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .add-game-container form button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

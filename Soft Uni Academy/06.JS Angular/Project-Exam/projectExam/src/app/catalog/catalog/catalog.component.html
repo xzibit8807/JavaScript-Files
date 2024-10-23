@@ -1,0 +1,40 @@
+<div class="catalog-container">
+    <h1>Game Catalog</h1>
+  
+    <div class="search-bar">
+      <input
+        type="text"
+        placeholder="Search games..."
+        [(ngModel)]="searchTerm"
+        (input)="onSearch()"
+      />
+    </div>
+  
+    <div class="top-liked-games">
+      <h2>Top 3 Liked Games</h2>
+      <div *ngFor="let game of topLikedGames" class="game-card">
+        <img [src]="game.gameImage" alt="{{ game.gameName }}" />
+        <h3>{{ game.gameName }}</h3>
+        <p>{{ game.gameDescription }}</p>
+      </div>
+    </div>
+  
+    <div class="last-added-games">
+      <h2>Last 3 Added Games</h2>
+      <div *ngFor="let game of lastAddedGames" class="game-card">
+        <img [src]="game.gameImage" alt="{{ game.gameName }}" />
+        <h3>{{ game.gameName }}</h3>
+        <p>{{ game.gameDescription }}</p>
+      </div>
+    </div>
+  
+    <div class="game-list">
+      <h2>All Games</h2>
+      <div *ngFor="let game of filteredGames" class="game-card">
+        <img [src]="game.gameImage" alt="{{ game.gameName }}" />
+        <h3>{{ game.gameName }}</h3>
+        <p>{{ game.gameDescription }}</p>
+      </div>
+    </div>
+  </div>
+  

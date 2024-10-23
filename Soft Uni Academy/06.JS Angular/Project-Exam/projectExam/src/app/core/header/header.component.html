@@ -3,17 +3,18 @@
     <nav id="nav">
       <div class="nav left">
         <span class="gradient skew"><h1 class="logo un-skew"><a routerLink="/home">Game Port</a></h1></span>
-        <button id="menu" class="btn-nav"><span class="fas fa-bars"></span></button>
       </div>
       <div class="nav right">
+         <a *ngIf="!isLoggedIn" routerLink="/auth/login" class="nav-link"><span class="nav-link-span"><span class="u-nav">Login</span></span></a>
+         <a *ngIf="!isLoggedIn" routerLink="/auth/register" class="nav-link"><span class="nav-link-span"><span class="u-nav">Register</span></span></a>
         <a routerLink="/home" class="nav-link active"><span class="nav-link-span"><span class="u-nav">Home</span></span></a>
         <a routerLink="/about" class="nav-link"><span class="nav-link-span"><span class="u-nav">About</span></span></a>
-        <a routerLink="/auth/login" class="nav-link"><span class="nav-link-span"><span class="u-nav">Login</span></span></a>
-        <a routerLink="/auth/register" class="nav-link"><span class="nav-link-span"><span class="u-nav">Register</span></span></a>
         <a routerLink="/contact" class="nav-link"><span class="nav-link-span"><span class="u-nav">Contact</span></span></a>
-        <a routerLink="/games-catalog" class="nav-link"><span class="nav-link-span"><span class="u-nav">Games-Catalog</span></span></a>
-        <a routerLink="/add-game" class="nav-link"><span class="nav-link-span"><span class="u-nav">Add-Game</span></span></a>
-        <a routerLink="/logout" class="nav-link"><span class="nav-link-span"><span class="u-nav">Logout</span></span></a>
+          <a *ngIf="isLoggedIn" routerLink="/catalog" class="nav-link"><span class="nav-link-span"><span class="u-nav">Games-Catalog</span></span></a>
+          <a *ngIf="isLoggedIn"  routerLink="/add-game" class="nav-link"><span class="nav-link-span"><span class="u-nav">Add-Game</span></span></a>
+          <a *ngIf="isLoggedIn"  routerLink="/auth/profile" class="nav-link"><span class="nav-link-span"><span class="u-nav">Profile</span></span></a>
+          <a *ngIf="isLoggedIn"  routerLink="/auth/logout" class="nav-link"><span class="nav-link-span"><span class="u-nav">Logout</span></span></a>
+       
       </div>
     </nav>
   </header>

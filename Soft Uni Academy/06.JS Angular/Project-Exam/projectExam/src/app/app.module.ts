@@ -14,6 +14,13 @@ import { appInterceptorProvider } from './app.interceptor';
 import { ErrorComponent } from './core/error/error.component';
 import { UserModule } from './user/user.module';
 import { MaxCountDirective } from './shared/validators/max-count.directive';
+import { StartPageComponent } from './home/start-page/start-page.component';
+import { DynamicPageComponent } from './home/dynamic-page/dynamic-page.component';
+import { AboutComponent } from './home/about/about.component';
+import { ContactComponent } from './home/contact/contact.component';
+import { CatalogComponent } from './catalog/catalog/catalog.component';
+import { AddGameComponent } from './catalog/add-game/add-game.component';
+import { CommentSectionComponent } from './home/about/comment-section/comment-section.component';
 
 // import { AuthenticateComponent } from './authenticate/authenticate.component';
 
@@ -25,6 +32,13 @@ import { MaxCountDirective } from './shared/validators/max-count.directive';
     HeaderComponent,
     ErrorComponent,
     MaxCountDirective,
+    StartPageComponent,
+    DynamicPageComponent,
+    AboutComponent,
+    ContactComponent,
+    CatalogComponent,
+    AddGameComponent,
+    CommentSectionComponent,
     // AuthenticateComponent,
   ],
   imports: [

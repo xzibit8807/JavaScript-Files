@@ -1,23 +1,9 @@
 <body>
-
-    <div class="main-content">
-        <h3>Learn more from us in</h3>
-        <a routerLink="/about" class="msg">About</a>
-        <div class="main-c2">
-            <ul>
-                <li>
-                    <a routerLink="/auth/login">
-                    <span><i class="btn">Login</i></span>
-                    </a>
-                </li>
-               <br />
-                <li>
-                    <a routerLink="/auth/register">
-                        <span><i class="btn">Register</i></span>  
-                    </a>
-                </li>
-            </ul>
-        </div>
+    <div *ngIf="!isLoggedIn">
+        <app-start-page></app-start-page>
+    </div>
+    <div *ngIf="isLoggedIn">
+       <app-dynamic-page></app-dynamic-page>
     </div>
 
     <p class="hide">We wish you a good time in our Web Page.</p>

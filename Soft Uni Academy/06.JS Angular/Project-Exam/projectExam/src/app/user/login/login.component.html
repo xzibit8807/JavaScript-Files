@@ -12,9 +12,9 @@
     <!-- Login Form -->
     <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
 
-      <input type="text" id="email" class="fadeIn second" name="email" placeholder="email" [ngModel]="loginFormData.email" required email
+      <input type="text" id="email" class="pass" name="email" placeholder="email@email" [ngModel]="loginFormData.email" required email
       #emailInput="ngModel" appEmail="">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password" (ngModel)="loginFormData.password" required #passwordInput="ngModel">
+      <input type="password" id="password" class="pass" name="password" placeholder="password" (ngModel)="loginFormData.password" required #passwordInput="ngModel">
     
       <div *ngIf="emailInput.touched && emailInput.invalid">
         <div *ngIf="emailInput.errors?.['required']" class="error">Email is required !</div>

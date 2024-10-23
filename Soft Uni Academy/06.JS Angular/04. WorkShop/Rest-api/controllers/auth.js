@@ -1,3 +1,5 @@
+
+
 const {
     userModel,
     tokenBlacklistModel
@@ -13,9 +15,11 @@ const removePassword = (data) => {
 }
 
 function register(req, res, next) {
-    const { tel, email, username, password, repeatPassword } = req.body;
+    const { email, password, confirmPassword } = req.body;
+    console.log("This is Backend ReqBody for register: "+req.body); 
+    console.log(email, password, confirmPassword + "comes from the frontend");
 
-    return userModel.create({ tel, email, username, password })
+    return userModel.create({ email, password })
         .then((createdUser) => {
             createdUser = bsonToJson(createdUser);
             createdUser = removePassword(createdUser);

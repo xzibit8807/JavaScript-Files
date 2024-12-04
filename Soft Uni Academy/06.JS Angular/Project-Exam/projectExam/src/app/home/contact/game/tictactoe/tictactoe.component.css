@@ -1,0 +1,85 @@
+.name {
+    text-align: center  !important;
+    font-size: 30px;
+    font-weight: 300;
+    font-style: inherit;
+    color: #290961;
+    padding: 25px;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-right: 30px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+/* Center the game and give it a modern look */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  /* Cell styles for a polished look */
+  .cell {
+    width: 120px;
+    height: 120px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    background-color: #3ee1fa;
+    border: 2px solid #444;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover and click effects */
+  .cell:hover:not(:disabled) {
+    background-color: #d8f428;
+  }
+  .cell:disabled {
+    cursor: default;
+    color: red !important;
+    font-style:italic;
+    font-display: 10px;
+    /* border-color: #d8f428; */
+  }
+  
+  /* X and O colors */
+  .cell:nth-child(odd):not(:disabled) {
+    color: red; /* Tomato color for X */
+  }
+  .cell:nth-child(even):not(:disabled) {
+    color: #4682b4; /* SteelBlue color for O */
+  }
+  
+  /* Winner and Draw message styling */
+  .info {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  .info p {
+    margin: 10px 0;
+  }
+  .info button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4682b4;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .info button:hover {
+    background-color: #5a9bd6;
+  }

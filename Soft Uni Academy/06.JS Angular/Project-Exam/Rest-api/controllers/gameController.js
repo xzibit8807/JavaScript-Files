@@ -1,5 +1,5 @@
 const { gameModel } = require('../models');
-const { newPost } = require('./postController')
+// const { newPost } = require('./postController')
 
 function getGames(req, res, next) {
     gameModel.find()

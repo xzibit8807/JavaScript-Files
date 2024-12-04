@@ -6,6 +6,8 @@ import { AboutComponent } from './home/about/about.component';
 import { ContactComponent } from './home/contact/contact.component';
 import { CatalogComponent } from './catalog/catalog/catalog.component';
 import { AddGameComponent } from './catalog/add-game/add-game.component';
+import { TictactoeComponent } from './home/contact/game/tictactoe/tictactoe.component';
+import { MathComponent } from './home/contact/game/math/math.component';
 
 
 const routes: Routes = [{path: '',pathMatch: 'full', redirectTo: '/home'},
@@ -17,8 +19,10 @@ const routes: Routes = [{path: '',pathMatch: 'full', redirectTo: '/home'},
   {path: 'catalog', component: CatalogComponent},
   {path: 'add-game', component: AddGameComponent},
 { path: 'error', component: ErrorComponent },
-{path: '**', redirectTo: `404`},
+{ path: 'tictac', component: TictactoeComponent},
+{ path: 'math', component: MathComponent},
 {path: '404', component: ErrorComponent},
+{path: '**', redirectTo: `404`},
 ];
 
 @NgModule({

@@ -27,6 +27,14 @@
     align-items: center;
     flex-direction: column;
   }
+
+.comment:hover {
+  opacity: 5;
+  filter: blur(0);
+  color:greenyellow;
+  background:blue;
+}
+
 .text {
   color: rgb(215, 167, 239);
   font-size: 23px;

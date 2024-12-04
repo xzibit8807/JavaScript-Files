@@ -1,0 +1,18 @@
+<img src="../../../../../assets/pictures/math/math1.jpg" alt="Example" loading="lazy" class="pic" />
+<h1 class="main"> </h1>
+<h2>Math Quiz Game</h2>
+<div class="question">
+  <p>What is {{ num1 }} {{ operator }} {{ num2 }}?</p>
+</div>
+<div class="input-area">
+  <input [(ngModel)]="userAnswer" placeholder="Your answer" (keyup.enter)="checkAnswer()" />
+  <button (click)="checkAnswer()" [disabled]="isSubmitDisabled">Submit</button>
+</div>
+<div class="feedback" [ngClass]="{ 'correct': isCorrect, 'incorrect': isCorrect === false }">
+  <p *ngIf="isCorrect !== null">{{ feedbackMessage }}</p>
+</div>
+<div class="score">
+  <p>Score: {{ score }}</p>
+  <p>Questions Answered: {{ questionCount }}</p>
+  <button (click)="nextQuestion()" class="btn">Next Question</button>
+</div>

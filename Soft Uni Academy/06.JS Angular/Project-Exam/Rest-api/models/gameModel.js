@@ -40,4 +40,4 @@ const gameSchema = new mongoose.Schema({
     }],
 }, { timestamps: { createdAt: 'created_at' } });
 
-module.exports = mongoose.model('Theme', gameSchema);
+module.exports = mongoose.model('Game', gameSchema);

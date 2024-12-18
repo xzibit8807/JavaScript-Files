@@ -1,10 +1,12 @@
-const { gameModel } = require('../models');
+const gameModel = require('../models/gameModel');
+
+// const { gameModel } = require('../models/gameModel');
 // const { newPost } = require('./postController')
 
 function getGames(req, res, next) {
     gameModel.find()
         .populate('userId')
-        .then(themes => res.json(themes))
+        .then(games => res.json(games))
         .catch(next);
 }
 
@@ -13,44 +15,56 @@ function getTheme(req, res, next) {
 
     gameModel.findById(gameId)
         .populate({
-            path : 'posts',
-            populate : {
-              path : 'userId'
+            path: 'posts',
+            populate: {
+                path: 'userId'
             }
-          })
+        })
         .then(theme => res.json(theme))
         .catch(next);
 }
 
 const createGame = (req, res, next) => {
-    const { 
-        gameName, 
-        gameImage, 
-        gameType, 
-        gameDescription, 
-        likedList, 
-        userId, 
-        comments, 
-        addedDate 
-    } = req.body;
+    const { gameName, gameImage, gameType, gameDescription, likedList, userId, addedDate } = req.body;
+    // console.log("Request Body:",
+    //     gameName,
+    //     gameImage,
+    //     gameType,
+    //     gameDescription,
+    //     likedList,
+    //     userId,
+    //     addedDate);
+        
+    const game = {
+        gameName,
+        gameImage,
+        gameType,
+        gameDescription,
+        likedList,
+        // userId,
+        addedDate
+    }
 
-    // Create a new game entry in the database
     gameModel.create({
         gameName,
         gameImage,
         gameType,
         gameDescription,
         likedList,
-        userId,
-        comments,
+        // userId,
         addedDate,
-        subscribers: [userId] 
     })
-    .then(game => {
-        res.status(200).json(game);
-    })
-    .catch(next);
+
+        .then(game => {
+            console.log("Game Created Successfully:", game);
+            res.status(201).json(game);
+        })
+        .catch(err => {
+            console.error("Error Creating Game:", err);
+            next(err);
+        });
 };
+
 
 function subscribe(req, res, next) {
     const gameId = req.params.gameId;

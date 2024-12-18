@@ -83,6 +83,13 @@ button {
     flex-grow: 1;
   }
   
+/* Correct the active class selector */
+.nav-link.active {
+  background: #f857a8;
+  color: #fff !important;
+}
+
+
   .nav-link,
   .logo {
     padding: 0 1em;

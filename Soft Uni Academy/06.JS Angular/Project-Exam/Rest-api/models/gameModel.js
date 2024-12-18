@@ -32,8 +32,10 @@ const gameSchema = new mongoose.Schema({
     }],
     userId: {
         type: ObjectId,
-        ref: "User"
+        ref: "User",
+        required: false // Make it optional if needed
     },
+    
     comments: [{
         type: ObjectId,
         ref: "Post"

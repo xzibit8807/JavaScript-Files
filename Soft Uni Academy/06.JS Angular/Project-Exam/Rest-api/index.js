@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const authMiddleware = require('./utils/auth');
 const bodyParser = require('body-parser');
 
-const apiRouter = require('./router');
+const apiRouter = require('./router/index');
 const cors = require('cors');
 // const config = require('./config/config');
 const { errorHandler } = require('./utils');

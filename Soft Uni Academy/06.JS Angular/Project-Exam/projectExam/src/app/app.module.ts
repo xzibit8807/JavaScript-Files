@@ -23,6 +23,7 @@ import { AddGameComponent } from './catalog/add-game/add-game.component';
 import { CommentSectionComponent } from './home/about/comment-section/comment-section.component';
 import { TictactoeComponent } from './home/contact/game/tictactoe/tictactoe.component';
 import { MathComponent } from './home/contact/game/math/math.component';
+import { MiniGamesComponent } from './home/mini-games/mini-games.component';
 
 // import { AuthenticateComponent } from './authenticate/authenticate.component';
 
@@ -43,6 +44,7 @@ import { MathComponent } from './home/contact/game/math/math.component';
     CommentSectionComponent,
     TictactoeComponent,
     MathComponent,
+    MiniGamesComponent,
     // AuthenticateComponent,
   ],
   imports: [

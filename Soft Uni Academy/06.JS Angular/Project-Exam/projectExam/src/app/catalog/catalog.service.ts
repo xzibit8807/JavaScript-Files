@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Game } from './game/game.module';
+import { catchError } from 'rxjs/operators';
 // import { Comment } from '../home/about/comment.module';
 
 @Injectable({
@@ -18,6 +19,7 @@ export class CatalogService {
   }
 
   addGame(gameData: Game): Observable<Game> {
+    // debugger
     const token = localStorage.getItem('authToken');
 
     if (!token) {
@@ -31,11 +33,12 @@ export class CatalogService {
     
     console.log('Sending headers:', headers);
 
-    return this.http.post<Game>(this.apiUrl, gameData, { headers });
+    // return this.http.post<Game>(this.apiUrl, gameData, { headers });
+    return this.http.post<Game>(this.apiUrl, gameData, /*{ headers }*/).pipe(
+      catchError((error) => {
+        console.error('Error in HTTP request:', error);
+        return throwError(() => new Error(error.message));
+      })
+    );
   }
 }
-
-// getAboutPageComments( comments: Comment): Observable<Comment>, {
-//   return this.http.get<Comment>(`${this.apiUrl}/comments`, { params: { comment } })
-// }
-

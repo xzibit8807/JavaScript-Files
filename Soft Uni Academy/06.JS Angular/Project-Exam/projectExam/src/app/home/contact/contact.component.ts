@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
 export class ContactComponent {
   contactForm: any = {};
 
-  onSubmit() {
-    // Send the contact form data to the server
-    console.log(this.contactForm);
-    this.router.navigate(['tictac'])
+  // onSubmit() {
 
-  }
+  //   console.log(this.contactForm);
+  //   this.router.navigate(['tictac'])
+
+  // }
   constructor(private router: Router) { }
 }

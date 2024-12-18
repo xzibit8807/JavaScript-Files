@@ -1,6 +1,7 @@
 <div class="add-game-container">
     <h1>Add New Game</h1>
-    <form (ngSubmit)="onSubmit()" #gameForm="ngForm">
+    <!-- <form (ngSubmit)="onSubmit()" #gameForm="ngForm"> -->
+      <form (ngSubmit)="onSubmit()" #gameForm="ngForm">
       <div>
         <label for="gameName">Game Name</label>
         <input
@@ -8,7 +9,7 @@
           id="gameName"
           required
           [(ngModel)]="newGame.gameName"
-          name="gameName"
+          name="gameName" required
         />
       </div>
       <div>
@@ -18,7 +19,7 @@
           id="gameImage"
           required
           [(ngModel)]="newGame.gameImage"
-          name="gameImage"
+          name="gameImage" required
         />
       </div>
       <div>
@@ -28,7 +29,7 @@
           id="gameType"
           required
           [(ngModel)]="newGame.gameType"
-          name="gameType"
+          name="gameType" required
         />
       </div>
       <div>
@@ -37,9 +38,10 @@
           id="gameDescription"
           required
           [(ngModel)]="newGame.gameDescription"
-          name="gameDescription"
+          name="gameDescription" required
         ></textarea>
       </div>
+      
       <button type="submit">Add Game</button>
     </form>
   </div>

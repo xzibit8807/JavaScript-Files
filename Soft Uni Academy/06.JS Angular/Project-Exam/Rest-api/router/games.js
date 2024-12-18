@@ -5,7 +5,7 @@ const { gameController, postController } = require('../controllers');
 
 // These routes are already mounted under `/games`
 router.get('/', gameController.getGames);
-router.post('/', auth, gameController.createGame);
+router.post('/', gameController.createGame);
 router.get('/:gameId', gameController.getTheme);
 router.post('/:gameId', auth, postController.createPost);
 router.put('/:gameId', auth, gameController.subscribe);

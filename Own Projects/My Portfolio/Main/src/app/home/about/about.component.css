@@ -1,0 +1,21 @@
+.hero {
+    /* background-color: #f4f4f4; */
+    color: #333;
+    /* padding: 50px; */
+    text-align: center;
+}
+.hero .btn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.main{ 
+    background-image: url(../../../assets/pictures/vecteezy_creative-designer-desktop_50070704.jpg);
+    background-size: cover;
+    background-position: center;
+}

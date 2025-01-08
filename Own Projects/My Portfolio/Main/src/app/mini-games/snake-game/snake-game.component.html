@@ -1,0 +1,14 @@
+<div class="btn"><button routerLink="/mini-games">Back</button></div>
+<div class="snake-game">
+    <div class="game-board" tabindex="0" (keydown)="handleKeydown($event)">
+        <div class="snake-segment" *ngFor="let segment of snake"
+            [ngStyle]="{ 'top.px': segment.y, 'left.px': segment.x }">
+        </div>
+        <div class="food" [ngStyle]="{ 'top.px': food.y, 'left.px': food.x }">
+        </div>
+    </div>
+    <div class="scoreboard">
+        <p>Score: {{ score }}</p>
+        <button (click)="startGame()">Start Game</button>
+    </div>
+</div>  

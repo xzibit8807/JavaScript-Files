@@ -1,0 +1,22 @@
+.error{
+    margin: 0;
+    padding: 0;
+    background-image: url("https://www.designbolts.com/wp-content/uploads/2015/12/Minion-404-funny-page-404-error-design.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 80vh; 
+    /* position: relative;  */
+}
+.msg{
+    position:sticky;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    color:yellow;
+    font-size: 50px;
+}
+.msg2:hover {
+    opacity: 5;
+    filter: blur(0);
+    color: aqua;
+}

@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    /* padding: 0; */
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    background-image: url(../../../assets/pictures/dark_pc.jpeg);
+    background-size: cover;
+    background-position: center;
+    height: 110vh; /* Set height to fill the viewport */
+    position: relative; /* Add position relative to allow z-index to work */
+}
+.top {
+    /* display: flex; */
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+    margin-left: 52px;
+    padding: 10px;
+    z-index: 1; /* Ensure header stays above content */
+    color: deepskyblue;
+    font-size: 80px;
+}
+
+.middle {
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+}

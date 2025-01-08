@@ -1,0 +1,15 @@
+<div class="btn"><button routerLink="/mini-games">Back</button></div>
+<div class="name">
+    <p><b>Tic Tac Toe:</b></p>
+</div>
+
+<div class="board">
+    <button *ngFor="let cell of board; let i = index" (click)="makeMove(i)" [disabled]="cell || winner" class="cell">
+        {{ cell }}
+    </button>
+</div>
+<div class="info">
+    <p *ngIf="winner">{{ winner }} wins!</p>
+    <p *ngIf="!winner && isBoardFull()">It's a draw!</p>
+    <button (click)="resetGame()">Restart</button>
+</div>

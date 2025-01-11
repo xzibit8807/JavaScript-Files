@@ -16,6 +16,8 @@ import { MathComponent } from './mini-games/math/math.component';
 import { TickTackToeComponent } from './mini-games/tick-tack-toe/tick-tack-toe.component';
 import { FormsModule } from '@angular/forms';
 import { SnakeGameComponent } from './mini-games/snake-game/snake-game.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { SnakeGameComponent } from './mini-games/snake-game/snake-game.component
     MathComponent,
     TickTackToeComponent,
     SnakeGameComponent,
+    ProjectsComponent,
+    SkillsComponent,
   ],
   imports: [
     BrowserModule,

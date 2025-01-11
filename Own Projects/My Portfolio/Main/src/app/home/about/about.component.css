@@ -19,3 +19,37 @@
     background-size: cover;
     background-position: center;
 }
+.container {
+    color: rgb(9, 55, 57);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    font-size: 25px;
+    font-style:oblique;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+    
+}
+
+.container p {
+    color: #007BFF;
+    font-weight: bold;
+
+}
+
+.container a {
+    color: #007BFF;
+    font-weight: bold;
+    background-color: bisque;
+    background-clip: content-box;
+    width: 400px;
+    padding-left: 30px;
+    justify-content: center;
+    border-radius: 15px;
+    border-color: black;
+    border-width: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    
+}

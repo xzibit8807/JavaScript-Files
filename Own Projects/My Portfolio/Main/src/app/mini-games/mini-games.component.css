@@ -9,7 +9,7 @@
     margin-bottom: 10px;
     border-radius: 10px;
     padding: 16px;
-    background-color: #f1f1f1;
+    background-color: #ddd2d2;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     transition: all 0.3s ease-in-out;
 }
@@ -17,6 +17,8 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 15px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.3s ease-in-out;
 }
 .textarea2 {
     width: 25%;
@@ -49,5 +51,13 @@
 .button:hover {
     color: blue;
 }
-
-
+.main {
+    width: 100%;
+    margin: auto;
+    padding: 4px;
+    max-width: 10000px;
+    background-color: rgb(164, 172, 243);
+    /* background-color: #f1f1f1; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.3s ease-in-out;
+}

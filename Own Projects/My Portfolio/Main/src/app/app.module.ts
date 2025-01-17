@@ -18,6 +18,10 @@ import { FormsModule } from '@angular/forms';
 import { SnakeGameComponent } from './mini-games/snake-game/snake-game.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { SkillsComponent } from './skills/skills.component';
+import { BlogComponent } from './blog/blog.component';
+import { CommentSectionComponent } from './blog/comment-section/comment-section.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +39,16 @@ import { SkillsComponent } from './skills/skills.component';
     SnakeGameComponent,
     ProjectsComponent,
     SkillsComponent,
+    BlogComponent,
+    CommentSectionComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

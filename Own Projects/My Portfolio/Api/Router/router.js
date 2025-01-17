@@ -4,7 +4,7 @@ const router = require('express').Router();
 // const posts = require('./posts');
 // const likes = require('./likes');
 // const test = require('./test');
-// const comments = require('./comments')
+const comments = require('./comments');
 const { authController } = require('../controllers');
 
 router.post('/register', authController.register);
@@ -15,7 +15,7 @@ router.post('/logout', authController.logout);
 // router.use('/games', games);
 // router.use('/posts', posts);
 // router.use('/likes', likes);
-// router.use('/comments', comments);
+router.use('/comments', comments);
 // router.use('/test', test);
 
 module.exports = router;

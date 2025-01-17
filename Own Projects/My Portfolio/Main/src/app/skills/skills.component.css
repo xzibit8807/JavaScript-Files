@@ -1,0 +1,45 @@
+.main {
+    display: inline;
+    font-style: inherit;
+    font-size: 20px;
+    
+}
+h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #290961;
+    margin-bottom: 20px;
+    margin-left: 25px;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        color: blue;
+        text-decoration: underline;
+        font-size: 40px;
+    }
+}
+li:hover{
+    background-color: #38ac2d;
+    transition: all 0.3s ease-in-out;
+    padding: 20px 10px;
+    color: white;
+    margin-left: 10px;
+    margin-right: 50px;
+    display: inline-block;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    font-size: 18px;
+    color: #4694bb;
+    margin-left: 25px;
+    margin-right: 25px;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        color: blue;
+        font-size: 22px;
+        text-decoration: underline;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}

@@ -7,7 +7,10 @@ import { MiniGamesComponent } from './mini-games/mini-games.component';
 import { MathComponent } from './mini-games/math/math.component';
 import { TickTackToeComponent } from './mini-games/tick-tack-toe/tick-tack-toe.component';
 import { SnakeGameComponent } from './mini-games/snake-game/snake-game.component';
-
+import { SkillsComponent } from './skills/skills.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { BlogComponent } from './blog/blog.component';
+import { SearchComponent } from './search/search.component';
 
 
 const routes: Routes = [{path: '',pathMatch: 'full', redirectTo: '/home'},
@@ -20,6 +23,10 @@ const routes: Routes = [{path: '',pathMatch: 'full', redirectTo: '/home'},
 { path: 'tictac', component: TickTackToeComponent},
 { path: 'math', component: MathComponent},
 { path: 'snake-game', component: SnakeGameComponent},
+{ path: 'projects', component: ProjectsComponent},
+{ path: 'skills', component: SkillsComponent},
+{ path: 'blog', component: BlogComponent},
+{ path: 'search', component: SearchComponent},
 {path: '404', component: ErrorComponent},
 {path: '**', redirectTo: `404`},
 

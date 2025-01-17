@@ -4,14 +4,45 @@
     padding-bottom: 6px;
     padding-top: 2px;
 }
+
 .header .logo {
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: bold;
     margin-right: 30px;
     transition: color 0.3s ease-in-out;
-    color: blue;
+    color: rgb(17, 93, 36);
     padding-left: 30px;
     padding-right: 30px;
+    padding-bottom: 3px;
+    padding-top: 10px;  
+    box-shadow: 0 0 5px rgba(23, 16, 118, 0.2);
+}
+
+.header .nav a.active {
+    background-color: aqua;
+    color: rgb(137, 43, 226) !important;
+    font-size: 30px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    border-radius: 30px;
+    padding: 20px 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;   
+    /* border-bottom: 3px solid red;
+    border-top: 3px solid red;
+    border-left: 3px solid red;
+    border-right: 3px solid red; */
+    border: 5px solid rgb(41, 7, 174);
+}
+
+.login {
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 20px;
+    color: #361a82;
+    /* border: 2px solid blue; */
 }
 
 .header .nav ul {
@@ -19,13 +50,15 @@
     justify-content: flex-end;
     /* padding: 5px; */
     display: flex;
-    gap: 20px;
+    gap: 15px;
 }
+
 .header .nav p {
     text-align: left;
     margin-left: 10px;
     margin-right: 80px;
 }
+
 .header .nav a {
     color: #6cf073e8;
     text-decoration: none;
@@ -43,19 +76,21 @@
         content: " ";
         position: absolute;
         top: 0;
-        left:0;
-        height:100%;
+        left: 0;
+        height: 100%;
         width: 100%;
-        z-index:-1;
+        z-index: -1;
         transition: .2s;
         border-radius: 25px;
     }
-        &:hover {
-            &::before {
-                background: linear-gradient(to bottom, #1e297c, #7155a7);
-                    box-shadow: 0px 3px 20px 0px rgb(73, 4, 9);
-                    transform: scale(1.2);
-            }
-            color:  rgb(73, 4, 9);
+
+    &:hover {
+        &::before {
+            background: linear-gradient(to bottom, #1e297c, #7155a7);
+            box-shadow: 0px 3px 20px 0px rgb(73, 4, 9);
+            transform: scale(1.2);
+        }
+
+        color: rgb(73, 4, 9);
     }
 }

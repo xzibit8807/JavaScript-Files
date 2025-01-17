@@ -1,9 +1,5 @@
 const express = require(`express`);
 const mongoose = require(`mongoose`);
-
-// const handlebars = require(`express-handlebars`);
-// const path = require(`path`);
-
 const routes = require(`./Router/router`);
 const configHandlebars = require(`./config/configHandlebars`);
 const configExpress = require(`./config/configExpress`);

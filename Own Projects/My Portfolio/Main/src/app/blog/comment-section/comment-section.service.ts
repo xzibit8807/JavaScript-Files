@@ -11,8 +11,8 @@ interface Comment {
 @Injectable({
   providedIn: 'root'
 })
-export class CommentsService {
-  
+export class CommentSectionService {
+
   private apiUrl = 'http://localhost:3000/api/comments';
 
   constructor(private http: HttpClient) { }

@@ -10,3 +10,6 @@ import { Component, OnInit } from '@angular/core';
 export class BlogComponent {
 
 }
+function getComments(comments: string){
+  return comments.split('\n').filter(comment => comment.trim().length > 0);
+}

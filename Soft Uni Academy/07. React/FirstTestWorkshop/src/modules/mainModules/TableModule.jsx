@@ -1,4 +1,4 @@
-export default function TableModule(){
+export default function TableModule() {
     return (
         <div class="table-wrapper">
             {/* <!-- Overlap components  --> */}

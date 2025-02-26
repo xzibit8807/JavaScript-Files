@@ -1,5 +1,7 @@
 import SearchModule from "./mainModules/SearchForm";
 import { useNavigate } from "react-router-dom";
+import TableModule from "./mainModules/TableModule";
+import PaginationModule from "./mainModules/PaginationModule";
 
 export default function MainModule() {
     const navigate = useNavigate();
@@ -11,8 +13,8 @@ export default function MainModule() {
                 <TableModule />
 
                 <button className="btn-add btn">Add new user</button>
-
-                <PaginationModule />
+                <PaginationModule/>
+                {/* <button className="btn-logout btn" onClick={() => navigate("/logout")}>Logout</button> */}
             </section>
         </main>
     );

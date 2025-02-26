@@ -9,15 +9,13 @@ function App() {
 
   return (
     <>
-      <body>
+      <div>
         <HeaderModule />
 
-        {/* <!-- Main component  --> */}
         <MainModule />
-        {/* <!-- Footer component  --> */}
 
         <FooterModule />
-      </body>
+      </div>
     </>
   )
 }

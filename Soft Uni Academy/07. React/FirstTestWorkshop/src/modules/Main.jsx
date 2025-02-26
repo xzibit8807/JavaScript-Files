@@ -1,15 +1,16 @@
 import SearchModule from "./mainModules/SearchForm";
-import UserDefaultModule from "./mainModules/UserDefaultModule";
+import { useNavigate } from "react-router-dom";
 
 export default function MainModule() {
+    const navigate = useNavigate();
     return (
-        <main class="main">
-            <section class="card users-container">
+        <main className="main">
+            <section className="card users-container">
                 <SearchModule />
 
                 <TableModule />
 
-                <button class="btn-add btn">Add new user</button>
+                <button className="btn-add btn">Add new user</button>
 
                 <PaginationModule />
             </section>

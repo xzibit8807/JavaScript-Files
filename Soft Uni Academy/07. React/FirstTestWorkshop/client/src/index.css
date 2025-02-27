@@ -1,4 +1,4 @@
-Global css
+/* Global css */
 html {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -219,7 +219,7 @@ ul {
 }
 
 .icon {
-  height: 13px;
+  height: 13px;  
 }
 
 .table th:hover .icon {

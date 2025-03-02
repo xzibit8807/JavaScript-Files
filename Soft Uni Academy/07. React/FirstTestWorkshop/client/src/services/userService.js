@@ -6,6 +6,16 @@ export default {
         const users = Object.values(result); 
         return users;
         // return await fetch(url).then(res => res.json())
-    }
+    },
     // getAllUsers: () => fetch(url).then(res => res.json())
+    async create(userData){
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        });
+        return await response.json(); 
+    }
 }

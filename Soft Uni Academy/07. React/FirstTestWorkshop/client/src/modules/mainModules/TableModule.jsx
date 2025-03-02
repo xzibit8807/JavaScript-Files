@@ -12,7 +12,7 @@ export default function TableModule() {
             setUsers(result);
         })
     }, []);
-    
+        
     return (
         <div className="table-wrapper">
             <div className="other">

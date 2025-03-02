@@ -1,15 +1,16 @@
 export default function TableModule() {
     return (
         <div class="table-wrapper">
-            {/* <!-- Overlap components  --> */}
+            <div className="other">
+                {/* <!-- Overlap components  --> */}
 
-            {/* <div class="loading-shade"> */}
-            {/* <!-- Loading spinner  --> */}
-            {/* <div class="spinner"></div> */}
+                {/* <div class="loading-shade"> */}
+                {/* <!-- Loading spinner  --> */}
+                {/* <div class="spinner"></div> */}
 
-            {/* <!--  No users added yet  --> */}
+                {/* <!--  No users added yet  --> */}
 
-            {/* <div class="table-overlap">
+                {/* <div class="table-overlap">
       <svg
         aria-hidden="true"
         focusable="false"
@@ -28,9 +29,9 @@ export default function TableModule() {
       <h2>There is no users yet.</h2>
     </div> */}
 
-            {/* <!-- No content overlap component  --> */}
+                {/* <!-- No content overlap component  --> */}
 
-            {/* <div class="table-overlap">
+                {/* <div class="table-overlap">
       <svg
         aria-hidden="true"
         focusable="false"
@@ -49,9 +50,9 @@ export default function TableModule() {
       <h2>Sorry, we couldn't find what you're looking for.</h2>
     </div> */}
 
-            {/* <!-- On error overlap component  --> */}
+                {/* <!-- On error overlap component  --> */}
 
-            {/* <div class="table-overlap">
+                {/* <div class="table-overlap">
       <svg
         aria-hidden="true"
         focusable="false"
@@ -70,7 +71,7 @@ export default function TableModule() {
       <h2>Failed to fetch</h2>
     </div>
 </div> */}
-
+            </div>
             <table class="table">
                 <thead>
                     <tr>
@@ -96,7 +97,7 @@ export default function TableModule() {
                             </svg>
                         </th>
                         <th>
-                            Email<svg  className="icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-down"
+                            Email<svg className="icon" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-down"
                                 role="img" xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 384 512">
                                 <path fill="currentColor"

@@ -1,10 +1,16 @@
+import { useEffect } from "react";
+
+import userService from "../services/userService";
+
 import SearchModule from "./mainModules/SearchForm";
-// import { useNavigate } from "react-router-dom";
 import TableModule from "./mainModules/TableModule";
 import PaginationModule from "./mainModules/PaginationModule";
 
 export default function MainModule() {
-    // const navigate = useNavigate();
+
+    useEffect(() => { 
+        userService.getAll()
+    }, []);
     return (
         <main className="main">
             <section className="card users-container">
@@ -13,7 +19,8 @@ export default function MainModule() {
                 <TableModule />
 
                 <button className="btn-add btn">Add new user</button>
-                <PaginationModule/>
+                <PaginationModule />
+
                 {/* <button className="btn-logout btn" onClick={() => navigate("/logout")}>Logout</button> */}
             </section>
         </main>

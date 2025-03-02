@@ -1,3 +1,5 @@
+import { formatDate } from "../../utils/dateTimeUtil";
+
 export default function UserList({
     firstName,
     lastName,
@@ -17,7 +19,7 @@ export default function UserList({
         <td>{lastName}</td>
         <td>{email}</td>
         <td>{phoneNumber}</td>
-        <td>{createdAt}</td>
+        <td> {formatDate(createdAt)}</td>
 
         <td className="actions">
             <button className="btn edit-btn" title="Edit">

@@ -6,12 +6,21 @@ import UserList from "./userList";
 export default function TableModule() {
     
     const [users, setUsers] = useState([]);
+    const [userUdDelete, setUserIdDelete] = useState([]); 
     
     useEffect(() => { 
         userService.getAll().then(result =>{
             setUsers(result);
         })
     }, []);
+
+
+    const userDeleteAction = (user) => {
+        userService.delete(user.id).then(result => {
+            const updatedUsers = users.filter(u => u.id!== user.id);
+            setUsers(updatedUsers);
+        });
+    }
         
     return (
         <div className="table-wrapper">
@@ -143,7 +152,8 @@ export default function TableModule() {
                 </thead>
 
                 <tbody>
-                    {users.map(user => <UserList key={user._id} 
+                    {users.map(user => <UserList key={user._id}
+                    {onDelete={userDeleteAction}} 
                     {...user} />)}  
 
                 </tbody>

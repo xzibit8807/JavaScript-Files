@@ -1,4 +1,4 @@
-export default function FOoterComp() {
+export default function FooterComp() {
     return (
         <div class="section_footer ">
             <div class="container">
